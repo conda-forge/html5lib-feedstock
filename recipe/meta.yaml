@@ -1,6 +1,6 @@
 {% set name = "html5lib" %}
-{% set version = "0.999999999" %}
-{% set sha256 = "ee747c0ffd3028d2722061936b5c65ee4fe13c8e4613519b4447123fc4546298" %}
+{% set version = "0.999" %}
+{% set sha256 = "c3887f7e2875d7666107fa8bee761ff95b9391acdcc7cd1b5fd57a23b5fbc49e" %}
 
 package:
   name: {{ name }}
