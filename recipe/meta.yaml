@@ -1,24 +1,26 @@
+{% set name = "html5lib" %}
 {% set version = "1.1" %}
 
 package:
-  name: html5lib
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/html5lib/html5lib-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/html5lib-{{ version }}.tar.gz
   sha256: b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
+    - setuptools
   run:
-    - python
+    - python >=3.8
     - six >=1.9
     - webencodings
 
